@@ -1,17 +1,24 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import { FooterInterface } from '../components/InterfaceElement/FooterInterface';
+import { HeaderMobile } from '../components/InterfaceElement/HeaderMobile';
+import { InterfaceElements } from '../components/InterfaceElement/InterfaceElements';
+import { RadiostantionEement } from '../components/InterfaceElement/RadiostantionEement';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ data }) {
   const element = data
     .map(c =>
-      <Image key={c.id} src={c.image} width="64" height="64"  />
+      <RadiostantionEement
+        key={c.id} image={c.image}
+      />
     );
-    
+
   return (
     <div>
-      Привет, мир!
+      <HeaderMobile/>
+      <InterfaceElements/>
       {element}
+      <FooterInterface/>
     </div>
   );
 };

@@ -7,22 +7,16 @@ import { MainLayout } from '../components/MainLayout';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ data }) {
-  const element = data
-    .map(c =>
-      <RadiostantionEement
-        key={c.id} image={c.image}
-      />
-    );
 
   return (
     <MainLayout>
       <main >
         <HeaderMobile />
         <InterfaceElements />
-        <div className={'mt-[50px]'}>
-          {element}
-        </div>
-        <FooterInterface />
+                 <RadiostantionEement
+         data={data}
+         />
+                <FooterInterface />
       </main>
     </MainLayout>
   );

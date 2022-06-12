@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+//все стили перенести в отдельный файл
 export function InterfaceElements() {
 	return (
 		<div>
@@ -24,31 +23,30 @@ export function InterfaceElements() {
 					<div className={'w-[24px] h-[1.5px] mb-[7.25px] rounded-sm bg-[#0C91D8]'}></div>
 					<div className={'w-[24px] h-[1.5px] rounded-sm bg-[#0C91D8]'}></div>
 				</div>
-				{/* написать плагины для кнопки */}
-				{/* <div className={'flex justify-between  mx-10'}> 
-					<button className={'mr-[15px] '}>  
+				{/* <div className={'flex justify-between  mx-10'}>
+					<button className={'btn-mobileInterface'}>
 						<img
-							src={'/icon/buttons/Like.png'} width="30" height="20"
+							src={'/icon/buttons/Like.png'} width="28" height="28"
 						/>
 					</button>
-					<button  className={'mr-[15px] '}>
+					<button className={'btn-mobileInterface'}>
 						<img
-							src={'/icon/buttons/play.png'} width="30" height="20"
+							src={'/icon/buttons/play.png'} width="35" height="35"
 						/>
 					</button>
-					<button  className={'mr-[15px] '}>
+					<button className={'btn-mobileInterface'}>
 						<img
-							src={'/icon/buttons/Dislike.png'} width="30" height="20"
+							src={'/icon/buttons/Dislike.png'} width="28" height="28"
 						/>
 					</button>
-					<button  className={'mr-[15px] '}>
+					<button className={'btn-mobileInterface'}>
 						<img
-							src={'/icon/buttons/Group.png'} width="30" height="20"
+							src={'/icon/buttons/Group.png'} width="20" height="18"
 						/>
 					</button>
-					<button  className={'mr-[15px] '}>
+					<button>
 						<img
-							src={'/icon/buttons/Union.png'} width="30" height="30"
+							src={'/icon/buttons/Union.png'} width="21" height="22"
 						/>
 					</button>
 				</div> */}
@@ -61,7 +59,8 @@ export function InterfaceElements() {
 
 				</div>
 			</div>
-			<div>
+			<div
+				className={'absolute w-[100%] left-[0px] top-[20%] h-[14px] bg-[#EEEEEE]'}>
 			</div>
 		</div>
 	);

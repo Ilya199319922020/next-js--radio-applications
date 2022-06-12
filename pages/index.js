@@ -3,6 +3,7 @@ import { FooterInterface } from '../components/InterfaceElement/FooterInterface'
 import { HeaderMobile } from '../components/InterfaceElement/HeaderMobile';
 import { InterfaceElements } from '../components/InterfaceElement/InterfaceElements';
 import { RadiostantionEement } from '../components/InterfaceElement/RadiostantionEement';
+import { MainLayout } from '../components/MainLayout';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ data }) {
@@ -14,12 +15,16 @@ export default function Home({ data }) {
     );
 
   return (
-    <div>
-      <HeaderMobile/>
-      <InterfaceElements/>
-      {element}
-      <FooterInterface/>
-    </div>
+    <MainLayout>
+      <main >
+        <HeaderMobile />
+        <InterfaceElements />
+        <div className={'mt-[50px]'}>
+          {element}
+        </div>
+        <FooterInterface />
+      </main>
+    </MainLayout>
   );
 };
 

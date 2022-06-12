@@ -5,7 +5,19 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    screens: {
+      'sm': '375px',
+      'md': '768px',
+      'lg': '1280px',
+    },
+    container: {
+      center: true,
+    },
+    extend: {
+      width: {
+
+      }
+    },
   },
   plugins: [],
 }

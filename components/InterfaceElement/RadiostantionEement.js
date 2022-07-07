@@ -4,21 +4,22 @@ export function RadiostantionEement({ data }) {
 		.map(i => <ImageBtnRadiostantion image={i.image} />
 		);
 
-	return (
-		<div className={' min-w-full h-[495.86px] py-[10px] px-[9px] overflow-x-auto relative top-[70px]'}>
-			<div className={"grid   w-[60px] gap-[14px] mt-[0px] "} >
+	return (<>
+	
+		<div className={' hide_scrollbar min-w-full h-[495.86px] py-[10px] px-[9px] overflow-x-auto relative top-[70px]'}>
+			<div className={"grid w-[60px] gap-[14px] mt-[0px] "} >
 				<div
-					className={''}
+					className={'fixed z-10 opacity-100'}
 				>
-					<button className={'btn-mobileRadio'}>
+					<button className={'btn-mobileRadio bg-[#F97537]'}>
 						My Best
 					</button>
 				</div>
 				<div
-					className={'grid row-start-1 grid-flow-col col-start-2 gap-[14px] '}
+					className={'grid  grid-flow-col col-start-2 gap-[14px] z-0'}
 				>
 					<button
-						className={' btn-mobileRadio'}
+						className={' btn-mobileRadio '}
 					>
 						Pop
 					</button>
@@ -91,13 +92,14 @@ export function RadiostantionEement({ data }) {
 
 				</div>
 				<div
-				className={'grid row-start-2 grid-cols-6  col-start-2 gap-[14px]'}
-			>
-				{imageBtnList}
+					className={'grid row-start-2 grid-cols-6  col-start-2 gap-[14px] z-0'}
+				>
+					{imageBtnList}
+				</div>
 			</div>
-			</div>
-		
+
 		</div>
+		</>
 	);
 };
 
@@ -107,7 +109,7 @@ function ImageBtnRadiostantion({ image }) {
 			className={''}
 		>
 			<img
-				src={image} className={'image__Btn'}
+				src={image} className={' btn-mobileRadio '}
 			/>
 		</button>
 	);

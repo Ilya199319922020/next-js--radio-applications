@@ -27,9 +27,9 @@ module.exports = {
         '.btn-mobileRadio': {
           minWidth: '60px',
           height: '60px',
-          boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
           borderRadius: '11px',
-          border: '0.5px solid #E5E5E5',
+          // border: '0.5px solid #E5E5E5',
           cursor: 'pointer',
           fontSize: '12px',
           fontWeight: '600'
@@ -39,6 +39,18 @@ module.exports = {
         },
         '.image__Btn': {
           width: '60px',
+        },
+        '.hide_scrollbar': {
+          /* IE and Edge */
+          '-ms-overflow-style': 'none',
+
+          /* Firefox */
+          'scrollbar-width': 'none',
+
+          /* Safari and Chrome */
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
         }
       })
     })

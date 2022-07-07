@@ -15,7 +15,7 @@ export function HeaderMobile() {
 
 	return (
 		<header>
-			<div className={'flex justify-between items-center'}>
+			<div className={'flex justify-between items-center px-[10px]'}>
 				<div>
 					<div className={'w-[54px] h-[18px] ml-[20px] text-[14px] flex  items-center font-semibold '}>
 						{hourValue}: {minutesValue}

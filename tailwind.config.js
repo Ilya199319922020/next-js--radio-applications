@@ -15,9 +15,9 @@ module.exports = {
       center: true,
     },
     extend: {
-      width: {
-
-      }
+      gridTemplateColumns: {
+        '6t': 'repeat(6, minmax(60px, 60px))',
+      },
     },
   },
   plugins: [
@@ -25,7 +25,7 @@ module.exports = {
     plugin(function ({ addComponents }) {
       addComponents({
         '.btn-mobileRadio': {
-          width: '60px',
+          minWidth: '60px',
           height: '60px',
           boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)',
           borderRadius: '11px',
@@ -33,11 +33,13 @@ module.exports = {
           cursor: 'pointer',
           fontSize: '12px',
           fontWeight: '600'
-
         },
         '.btn-mobileInterface': {
           margin: '0 15px 0 0',
-                  }
+        },
+        '.image__Btn': {
+          width: '60px',
+        }
       })
     })
 

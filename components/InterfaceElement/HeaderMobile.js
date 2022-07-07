@@ -4,6 +4,7 @@ export function HeaderMobile() {
 	let date = new Date();
 	const hour = date.getHours();
 	const minutes = date.getMinutes();
+	
 	const [hourValue, setHourValue] = useState(hour);
 	const [minutesValue, setMinutesValue] = useState(minutes);
 

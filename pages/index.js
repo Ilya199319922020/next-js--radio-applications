@@ -10,14 +10,12 @@ export default function Home({ data }) {
 
   return (
     <MainLayout>
-      <main >
-        <HeaderMobile />
-        <InterfaceElements />
-                 <RadiostantionEement
-         data={data}
-         />
-                <FooterInterface />
-      </main>
+          <HeaderMobile />
+          <InterfaceElements />
+          <RadiostantionEement
+            data={data}
+          />
+          <FooterInterface />
     </MainLayout>
   );
 };

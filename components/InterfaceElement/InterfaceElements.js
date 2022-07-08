@@ -32,7 +32,7 @@ export function InterfaceElements() {
 						<div className={styles.interfaceMenu__btn_elementlastchild}></div>
 					</button>
 				</div>
-				{/* <div className={'flex justify-between  mx-10'}>
+				<div className={styles.interfaceMenu__btnAction}>
 					<button className={'btn-mobileInterface'}>
 						<img
 							src={'/icon/buttons/Like.png'} width="28" height="28"
@@ -58,7 +58,7 @@ export function InterfaceElements() {
 							src={'/icon/buttons/Union.png'} width="21" height="22"
 						/>
 					</button>
-				</div> */}
+				</div>
 				<div>
 					<button>
 						<img

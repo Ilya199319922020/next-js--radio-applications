@@ -29,6 +29,10 @@
 		}
 	}
 
+	.interfaceMenu__btnAction {
+		@apply flex justify-between mx-10;
+	}
+
 	.interfaceMenu__search {
 		@apply w-[21px] h-[22px] mr-[20px];
 	}

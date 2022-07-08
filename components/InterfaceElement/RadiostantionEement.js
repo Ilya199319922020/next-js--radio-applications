@@ -1,9 +1,18 @@
 import styles from '../../styles/RadiostantionEement.module.scss';
+import Button from '../AuxiliaryComponent/Button';
 
 export function RadiostantionEement({ data }) {
+
+	let set = new Set(data.map(g => g.genre));
+	const nameGenre = [...set];
+
 	const imageBtnList = data
-		.map(i => <ImageBtnRadiostantion image={i.image} />
+		.map(i => <ImageBtnRadiostantion key={i.id} image={i.image} />
 		);
+	const btnGenreList = nameGenre
+		.map(g => <ImageBtnRadiostantion name={g} key={g} />
+		);
+	console.log(nameGenre)
 
 	return (
 		<>
@@ -12,43 +21,18 @@ export function RadiostantionEement({ data }) {
 					<div
 						className={styles.wraperRadiostantion__container_element}
 					>
-						<button className={styles.wraperRadiostantion__container_elementBtn}>
+						<Button
+							classNameElement={styles.wraperRadiostantion__container_elementBtn}
+						>
 							My Best
-						</button>
+						</Button>
 					</div>
 					<div
 						className={styles.wraperRadiostantion__container_elementUp}
 					>
-						<button
-							className={'btn-mobileRadio '}
-						>
-							Pop
-						</button>
-						<button
-							className={' btn-mobileRadio'}
-						>
-							Adult PoP
-						</button>
-						<button
-							className={' btn-mobileRadio'}
-						>
-							Power Pop
-						</button>
-						<button
-							className={' btn-mobileRadio'}
-						>
-							Dance
-						</button>
-						<button
-							className={' btn-mobileRadio'}
-						>
-							Electro
-						</button>
-						<button
-							className={' btn-mobileRadio'}
-						>
-							Hip-hop
-						</button>
+						{
+							btnGenreList
+						}
 					</div>
 					<div
 						className={styles.wraperRadiostantion__container_elementleft}
@@ -111,16 +95,14 @@ export function RadiostantionEement({ data }) {
 	);
 };
 
-function ImageBtnRadiostantion({ image }) {
+
+function ImageBtnRadiostantion({ image, name }) {
 	return (
-		<button
-			className={''}
+		<Button
+			image={image}
+			classNameElement={'btn-mobileRadio'}
 		>
-			<img
-				className={' btn-mobileRadio '}
-				src={image}
-			/>
-		</button>
+			{name}
+		</Button>
 	);
 };
-

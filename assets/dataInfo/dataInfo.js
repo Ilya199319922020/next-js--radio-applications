@@ -194,5 +194,6 @@ export const stateInfo = {
 			genre: "Dance",
 			image: dance,
 		},
-	]
+	],
+
 };

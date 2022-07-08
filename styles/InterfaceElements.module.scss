@@ -1,0 +1,39 @@
+.form {
+	@apply px-[10px] mb-[10.5px] mt-[16px];
+
+	.form__input {
+		@apply block w-full h-[36px] bg-[#e6e6e6] rounded-lg;
+	}
+
+	.form__button {
+		@apply absolute top-[7.35%] left-[90%];
+
+		.form__button_image {
+			@apply w-[14.57px] h-[17.25px];
+		}
+	}
+}
+
+.interfaceMenu {
+	@apply absolute min-w-full h-[55px] left-[0px] border-t border-slate-400 flex justify-between items-center;
+
+	.interfaceMenu__btn {
+		@apply ml-[20px];
+
+		.interfaceMenu__btn_element {
+			@apply w-[24px] h-[1.5px] mb-[7.25px] rounded-sm bg-[#0C91D8];
+		}
+
+		.interfaceMenu__btn_elementlastchild {
+			@apply w-[24px] h-[1.5px] rounded-sm bg-[#0C91D8];
+		}
+	}
+
+	.interfaceMenu__search {
+		@apply w-[21px] h-[22px] mr-[20px];
+	}
+}
+
+.interface__element {
+	@apply absolute w-[100%] left-[0px] top-[20%] h-[14px] bg-[#EEEEEE];
+}

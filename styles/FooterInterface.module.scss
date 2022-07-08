@@ -1,0 +1,19 @@
+.footer {
+	@apply flex justify-between relative pl-[16px] pr-[16px] pt-[12px] top-[70px];
+
+	.footer__btn_arrow {
+		@apply w-[15px] rotate-180;
+	}
+
+	.footer__btn_up {
+		@apply w-[19px] h-[27px];
+	}
+
+	.footer__btn_paper {
+		@apply w-[19px] h-[27px];
+	}
+
+	.footer__btn_copy {
+		@apply w-[25px] h-[25px];
+	}
+}

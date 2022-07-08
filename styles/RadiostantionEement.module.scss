@@ -1,0 +1,28 @@
+.wraperRadiostantion {
+	@apply hide_scrollbar min-w-full h-[495.86px] py-[10px] px-[9px] overflow-x-auto relative top-[70px];
+
+	.wraperRadiostantion__container {
+		@apply grid w-[60px] gap-[14px] mt-[0px];
+
+		.wraperRadiostantion__container_element {
+			@apply fixed z-10 opacity-100;
+
+			.wraperRadiostantion__container_elementBtn {
+				@apply	btn-mobileRadio bg-[#F97537];
+			}
+		}
+
+		.wraperRadiostantion__container_elementUp {
+			@apply grid grid-flow-col col-start-2 gap-[14px] z-0;
+
+		}
+
+		.wraperRadiostantion__container_elementleft {
+			@apply grid row-span-2 gap-[14px];
+		}
+
+		.wraperRadiostantion__container_elementCenter {
+			@apply grid row-start-2 grid-cols-6 col-start-2 gap-[14px] z-0;
+		}
+	}
+}

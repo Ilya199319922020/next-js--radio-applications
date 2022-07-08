@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import styles from '../styles/MainLayout.module.scss';
 
 export function MainLayout({ children }) {
 	return (
 		<div
-			className={'relative  pt-[14px] pb-[46px] w-[375px] min-h-[754px] container  mx-auto '}
+			className={styles.layout}
 		>
 			{children}
 		</div>

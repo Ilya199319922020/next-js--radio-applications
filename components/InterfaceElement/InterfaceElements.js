@@ -1,34 +1,35 @@
 import { useState } from "react";
+import styles from '../../styles/InterfaceElements.module.scss';
 
-//все стили перенести в отдельный файл
 export function InterfaceElements() {
 	const [searchValue, setSearchValue] = useState('');
 
 	return (
 		<div>
-			<form className={'w=[355px] px-[10px] h=[36px] mb-[10.5px] mt-[16px]'}>
+			<form className={styles.form}>
 				<input
+					className={styles.form__input}
 					value={searchValue}
 					type={'input'}
-					className={' block w-full h-[36px] bg-[#e6e6e6] rounded-lg'}
 					onChange={e => setSearchValue(e.target.value)}
 				/>
 				<button
-					className={'absolute top-[7.35%] left-[90%]'}
+					className={styles.form__button}
 				>
 					<img
-						src={'/icon/other/Fill.png'} className={'w-[14.57px] h-[17.25px]'}
+						className={styles.form__button_image}
+						src={'/icon/other/Fill.png'}
 					/>
 				</button>
 			</form>
 			<div
-				className={'absolute min-w-full h-[55px] left-[0px] border-t border-slate-400  flex justify-between  items-center'}
+				className={styles.interfaceMenu}
 			>
-				<div className={'ml-[20px]'}>
+				<div className={styles.interfaceMenu__btn}>
 					<button>
-						<div className={'w-[24px] h-[1.5px] mb-[7.25px] rounded-sm bg-[#0C91D8]'}></div>
-						<div className={'w-[24px] h-[1.5px] mb-[7.25px] rounded-sm bg-[#0C91D8]'}></div>
-						<div className={'w-[24px] h-[1.5px] rounded-sm bg-[#0C91D8]'}></div>
+						<div className={styles.interfaceMenu__btn_element}></div>
+						<div className={styles.interfaceMenu__btn_element}></div>
+						<div className={styles.interfaceMenu__btn_elementlastchild}></div>
 					</button>
 				</div>
 				{/* <div className={'flex justify-between  mx-10'}>
@@ -61,14 +62,16 @@ export function InterfaceElements() {
 				<div>
 					<button>
 						<img
-							src={'/icon/other/Union.png'} className={' w-[21px]  h-[22px] mr-[20px]'}
+							className={styles.interfaceMenu__search}
+							src={'/icon/other/Union.png'}
 						/>
 					</button>
 
 				</div>
 			</div>
 			<div
-				className={'absolute w-[100%] left-[0px] top-[20%] h-[14px] bg-[#EEEEEE]'}>
+				className={styles.interface__element}
+			>
 			</div>
 		</div>
 	);

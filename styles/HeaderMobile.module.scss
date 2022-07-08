@@ -1,0 +1,23 @@
+.header {
+	@apply flex justify-between items-center px-[10px];
+
+	.header__time {
+		@apply w-[54px] h-[18px] ml-[20px] text-[14px] flex items-center font-semibold;
+	}
+
+	.header__icon {
+		@apply	flex items-center justify-between w-[67px] h-[11.5px];
+
+		.header__icon_image image_connection {
+			@apply h-[10.7px] w-[17.1px];
+		}
+
+		.header__icon_image image_wi_fi {
+			@apply h-[100%] w-[15.4px];
+		}
+
+		.header__icon_image image_baterry {
+			@apply h-[100%] w-[22px];
+		}
+	}
+}

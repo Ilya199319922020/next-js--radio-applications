@@ -12,7 +12,8 @@ const Button = ({
 			{
 				image ?
 					<img
-						className={'btn-mobileRadio'} src={image}
+						className={!classNameElement && 'btn-mobileRadio' || active && 'btn-mobileRadio-active'}
+						src={image}
 					/>
 					: children
 			}

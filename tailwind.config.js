@@ -34,6 +34,16 @@ module.exports = {
           fontSize: '12px',
           fontWeight: '600'
         },
+        '.btn-mobileRadio-active': {
+          border: '6px solid #008344',
+          minWidth: '60px',
+          height: '60px',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+          borderRadius: '11px',
+          cursor: 'pointer',
+          fontSize: '12px',
+          fontWeight: '600'
+        },
         '.btn-mobileInterface': {
           margin: '0 15px 0 0',
         },
@@ -43,10 +53,8 @@ module.exports = {
         '.hide_scrollbar': {
           /* IE and Edge */
           '-ms-overflow-style': 'none',
-
           /* Firefox */
           'scrollbar-width': 'none',
-
           /* Safari and Chrome */
           '&::-webkit-scrollbar': {
             display: 'none'

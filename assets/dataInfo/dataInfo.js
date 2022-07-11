@@ -1,5 +1,5 @@
 const road = '/icon/radiostations/road.png';
- const record = '/icon/radiostations/record.png';
+const record = '/icon/radiostations/record.png';
 const pilot = '/icon/radiostations/pilot.png';
 const europaplus = '/icon/radiostations/europaplus.png';
 const maxmum = '/icon/radiostations/maxmum.png';
@@ -7,7 +7,7 @@ const YOFM = '/icon/radiostations/YOFM.png';
 const ELEGANT = '/icon/radiostations/ELEGANT.png';
 const ritmo = '/icon/radiostations/ritmo.png';
 const ritmoEl = '/icon/radiostations/ritmoEl.png';
-const pixel= '/icon/radiostations/pixel.png';
+const pixel = '/icon/radiostations/pixel.png';
 const love = '/icon/radiostations/love.png';
 const dance = '/icon/radiostations/dance.png';
 const velena = '/icon/radiostations/velena.png';
@@ -25,6 +25,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Adult Pop",
 			image: road,
+			value: false,
 		},
 		{
 			id: 2,
@@ -32,6 +33,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Dance",
 			image: record,
+			value: false,
 		},
 		{
 			id: 3,
@@ -39,6 +41,7 @@ export const stateInfo = {
 			location: 'Belorussia',
 			genre: "Rock",
 			image: pilot,
+			value: false,
 		},
 		{
 			id: 4,
@@ -46,6 +49,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Power Pop",
 			image: europaplus,
+			value: false,
 		},
 		{
 			id: 5,
@@ -53,6 +57,7 @@ export const stateInfo = {
 			location: 'United States',
 			genre: "Rock",
 			image: elvis,
+			value: false,
 		},
 		{
 			id: 6,
@@ -60,6 +65,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Power Pop",
 			image: record,
+			value: false,
 		},
 		{
 			id: 7,
@@ -67,6 +73,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Pop",
 			image: maxmum,
+			value: false,
 		},
 		{
 			id: 8,
@@ -74,6 +81,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Power Pop",
 			image: europaplus,
+			value: false,
 		},
 		{
 			id: 9,
@@ -81,6 +89,7 @@ export const stateInfo = {
 			location: 'Belorussia',
 			genre: "Adult Pop",
 			image: tik_tak,
+			value: false,
 		},
 		{
 			id: 10,
@@ -88,6 +97,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Power Pop",
 			image: record,
+			value: false,
 		},
 		{
 			id: 11,
@@ -95,6 +105,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Pop",
 			image: maxmum,
+			value: false,
 		},
 		{
 			id: 12,
@@ -102,6 +113,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Power Pop",
 			image: elisium,
+			value: false,
 		},
 		{
 			id: 13,
@@ -109,6 +121,7 @@ export const stateInfo = {
 			location: 'United States',
 			genre: "Adult Pop",
 			image: velena,
+			value: false,
 		},
 		{
 			id: 14,
@@ -116,6 +129,7 @@ export const stateInfo = {
 			location: 'Latvija',
 			genre: "Rock",
 			image: maxmum,
+			value: false,
 		},
 		{
 			id: 15,
@@ -123,6 +137,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Chanson",
 			image: shanson,
+			value: false,
 		},
 		{
 			id: 16,
@@ -130,6 +145,7 @@ export const stateInfo = {
 			location: 'United States',
 			genre: "Electro",
 			image: YOFM,
+			value: false,
 		},
 		{
 			id: 17,
@@ -137,6 +153,7 @@ export const stateInfo = {
 			location: 'Belorussia',
 			genre: "Rock",
 			image: pilot,
+			value: false,
 		},
 		{
 			id: 18,
@@ -144,6 +161,7 @@ export const stateInfo = {
 			location: 'Germany',
 			genre: "Hip-hop",
 			image: ritmo,
+			value: false,
 		},
 		{
 			id: 19,
@@ -151,6 +169,7 @@ export const stateInfo = {
 			location: 'Latviya',
 			genre: "Chanson",
 			image: ELEGANT,
+			value: false,
 		},
 		{
 			id: 20,
@@ -158,6 +177,7 @@ export const stateInfo = {
 			location: 'Germany',
 			genre: "Electro",
 			image: ritmoEl,
+			value: false,
 		},
 		{
 			id: 21,
@@ -165,6 +185,7 @@ export const stateInfo = {
 			location: 'Россия',
 			genre: "Power Pop",
 			image: europaplus,
+			value: false,
 		},
 		{
 			id: 22,
@@ -172,6 +193,7 @@ export const stateInfo = {
 			location: 'USA',
 			genre: "r&b soul",
 			image: pixel,
+			value: false,
 		},
 		{
 			id: 23,
@@ -179,6 +201,7 @@ export const stateInfo = {
 			location: 'USA',
 			genre: "Pop",
 			image: love,
+			value: false,
 		},
 		{
 			id: 24,
@@ -186,6 +209,7 @@ export const stateInfo = {
 			location: 'Germany',
 			genre: "Adult Pop",
 			image: radio,
+			value: false,
 		},
 		{
 			id: 25,
@@ -193,6 +217,7 @@ export const stateInfo = {
 			location: 'United States',
 			genre: "Dance",
 			image: dance,
+			value: false,
 		},
 	],
 

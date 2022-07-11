@@ -1,18 +1,43 @@
+import { useState } from 'react';
 import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
 
 export function RadiostantionEement({ data }) {
 
-	let set = new Set(data.map(g => g.genre));
+	const [dataRadioStantion, setDataRadioStantion] = useState(data);
+
+	const handleButtons = ({
+		dataRadioStantion, setDataRadioStantion, handleButtons
+	}) => id => {
+		const newValueButton = dataRadioStantion.map(button => {
+			if (button.id === id) {
+				return ({ ...button, value: true });
+			}
+			return ({ ...button, value: false });
+		});
+		setDataRadioStantion(newValueButton)
+	};
+
+	let set = new Set(dataRadioStantion.map(g => g.genre));
 	const nameGenre = [...set];
 
-	const imageBtnList = data
-		.map(i => <ImageBtnRadiostantion key={i.id} image={i.image} />
+	const imageBtnList = dataRadioStantion
+		.map(i => <ImageBtnRadiostantion
+			key={i.id}
+			image={i.image}
+			dataRadioStantion={dataRadioStantion}
+			value={i.value} id={i.id}
+			handleButtons={handleButtons}
+			setDataRadioStantion={setDataRadioStantion}
+		/>
 		);
 	const btnGenreList = nameGenre
-		.map(g => <ImageBtnRadiostantion name={g} key={g} />
+		.map(g => <ImageBtnRadiostantion
+			name={g} key={g}
+		/>
 		);
-	console.log(nameGenre)
+
+
 
 	return (
 		<>
@@ -96,11 +121,19 @@ export function RadiostantionEement({ data }) {
 };
 
 
-function ImageBtnRadiostantion({ image, name }) {
+function ImageBtnRadiostantion({
+	image, name, handleButtons, setDataRadioStantion, dataRadioStantion, id, value
+}) {
+	const getValue = () => {
+		handleButtons({ dataRadioStantion, setDataRadioStantion })(id)
+	};
+
 	return (
 		<Button
 			image={image}
-			classNameElement={'btn-mobileRadio'}
+			classNameElement={value ? 'btn-mobileRadio-active' : 'btn-mobileRadio'}
+			onClick={getValue}
+			active={value ? true : false}
 		>
 			{name}
 		</Button>

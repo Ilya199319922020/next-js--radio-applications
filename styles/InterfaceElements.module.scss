@@ -15,7 +15,7 @@
 }
 
 .interfaceMenu {
-	@apply absolute min-w-full h-[55px] left-[0px] border-t border-slate-400 flex justify-between items-center;
+	@apply absolute min-w-full h-[55px] pr-[20px] left-[0px] border-t border-slate-400 flex justify-between items-center;
 
 	.interfaceMenu__btn {
 		@apply ml-[20px];
@@ -35,6 +35,12 @@
 
 	.interfaceMenu__search {
 		@apply w-[21px] h-[22px] mr-[20px];
+	}
+
+	.interfaceMenu__form {
+		.interfaceMenu__form_input {
+			@apply border-b-[1px] border-[#C6C6C6] w-[231px];
+		}
 	}
 }
 

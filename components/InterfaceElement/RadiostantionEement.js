@@ -1,15 +1,33 @@
-import { useState } from 'react';
-import { handleButtons, handleButtonsGenre, handleButtonsLocation } from '../../assets/onClickFunction/onClickbtn';
+import { useEffect, useState } from 'react';
+import { handleButtons, handleButtonsGenre, handleButtonsLocation, handleButtonsGenreActive, handleButtonsGenreFilter } from '../../assets/onClickFunction/onClickbtn';
 import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
 import ButtonText from '../AuxiliaryComponent/ButtonText';
 
-export function RadiostantionEement({ data }) {
+export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 
 	const [dataRadioStantion, setDataRadioStantion] = useState(data.radioStations);
 	const [dataGenreName, setDataGenreName] = useState(data.genreButton);
 	const [dataLocation, setDataLocation] = useState(data.locationList);
 	const [myBestState, setMyBestState] = useState([]);
+	const [isMyBest, setIsMyBest] = useState(false);
+	console.log(dataRadioStantion)
+	// useEffect(() => {
+	// 	if (isMyBest) {
+	// 		const newMyBest = [...dataRadioStantion].filter(t =>
+	// 			t.value === true
+	// 		);
+	// 		// console.log(newMyBest)
+	// 		setMyBestState(newMyBest);
+	// 	}
+	// }, [dataRadioStantion]);
+
+	// console.log(dataRadioStantion);
+	useEffect(() => {
+		if (myBestState.length > 0) {
+			setActiveSearch(true);
+		}
+	}, [myBestState]);
 
 	const imageBtnList = dataRadioStantion
 		.map(i => <ImageBtnRadiostantion
@@ -23,10 +41,10 @@ export function RadiostantionEement({ data }) {
 			dataGenreName={dataGenreName}
 			setDataGenreName={setDataGenreName}
 			setDataRadioStantion={setDataRadioStantion}
-			handleButtons={handleButtons}
-			handleButtonsLocation={handleButtonsLocation}
 			dataLocation={dataLocation}
 			setDataLocation={setDataLocation}
+			setIsMyBest={setIsMyBest}
+			setMyBestState={setMyBestState}
 		/>
 		);
 	const btnGenreList = dataGenreName
@@ -38,10 +56,8 @@ export function RadiostantionEement({ data }) {
 			id={g.id}
 			dataGenreName={dataGenreName}
 			setDataGenreName={setDataGenreName}
-			handleButtonsGenre={handleButtonsGenre}
 			dataRadioStantion={data.radioStations}
 			setDataRadioStantion={setDataRadioStantion}
-
 		/>
 		);
 
@@ -51,12 +67,7 @@ export function RadiostantionEement({ data }) {
 		image={k.image}
 		id={k.id}
 		isValue={k.isValue}
-		handleButtonsLocation={handleButtonsLocation}
-		dataLocation={dataLocation}
-		dataRadioStantion={data.radioStations}
-		setDataRadioStantion={setDataRadioStantion}
-		setDataLocation={setDataLocation}
-	/>
+		/>
 	);
 
 	return (
@@ -97,15 +108,19 @@ export function RadiostantionEement({ data }) {
 	);
 };
 
+
+
+
 const ImageBtnRadiostantion = ({
-	image, name, handleButtons, setDataRadioStantion,
+	image, name, setDataRadioStantion,
 	dataRadioStantion, id, value, genre, location, dataGenreName,
-	setDataGenreName, dataLocation, setDataLocation
+	setDataGenreName, dataLocation, setDataLocation, setIsMyBest, setMyBestState
 }) => {
 	const onRadiostantionIcon = () => {
-		handleButtons({ dataRadioStantion, setDataRadioStantion })(id, genre, location);
-		handleButtonsGenre({ dataGenreName, setDataGenreName })(genre);
+		handleButtons({ dataRadioStantion, setDataRadioStantion, setMyBestState })(id, genre, location);
+		handleButtonsGenreActive({ dataGenreName, setDataGenreName })(genre);
 		handleButtonsLocation({ dataLocation, setDataLocation })(location);
+		setIsMyBest(true);
 	};
 
 	return (
@@ -121,12 +136,12 @@ const ImageBtnRadiostantion = ({
 };
 
 const TextBtnGenre = ({
-	image, name, handleButtonsGenre, setDataGenreName,
+	image, name,  setDataGenreName,
 	dataGenreName, id, value, genre, dataRadioStantion,
 	setDataRadioStantion,
 }) => {
 	const onGenreIcon = () => {
-		handleButtonsGenre({ dataGenreName, setDataGenreName, dataRadioStantion, setDataRadioStantion })(genre)
+		handleButtonsGenreFilter({ dataGenreName, setDataGenreName, dataRadioStantion, setDataRadioStantion })(genre)
 	};
 
 	return (
@@ -141,15 +156,11 @@ const TextBtnGenre = ({
 };
 
 const LocationBtn = ({
-	image, isValue, id, location, handleButtonsLocation,
-	setDataLocation, dataLocation, dataRadioStantion, setDataRadioStantion
+	image, isValue, id, location, 
 }) => {
-	const onLocationBtnn = () => {
-		handleButtonsLocation({ dataLocation, setDataLocation, dataRadioStantion, setDataRadioStantion })(location)
-	};
+
 	return (
 		<button
-			onClick={onLocationBtnn}
 			className={isValue ? 'btn-mobileRadioFilter-active' : !image && 'btn-mobileRadio'}
 		>
 			{

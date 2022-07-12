@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from '../../styles/InterfaceElements.module.scss';
 import Button from "../AuxiliaryComponent/Button";
 
-export function InterfaceElements() {
+export function InterfaceElements({ isActiveMenu }) {
 	const [searchValue, setSearchValue] = useState('');
 	const [activeSearch, setActiveSearch] = useState(false);
 
@@ -39,7 +39,7 @@ export function InterfaceElements() {
 				</div>
 				{
 					!activeSearch
-						?
+						? isActiveMenu &&
 						<div className={styles.interfaceMenu__btnAction}>
 							<button className={'btn-mobileInterface'}>
 								<img

@@ -1,5 +1,5 @@
 export const handleButtons = ({
-	dataRadioStantion, setDataRadioStantion,
+	dataRadioStantion, setDataRadioStantion, setMyBestState
 }) => (id, genre, location) => {
 	const newValueButton = dataRadioStantion.map(button => {
 		if (button.id === id) {
@@ -17,30 +17,42 @@ export const handleButtons = ({
 };
 
 
-export const handleButtonsGenre = ({
+export const handleButtonsGenreActive = ({
 	dataGenreName, setDataGenreName,
-	dataRadioStantion, setDataRadioStantion
 }) => genre => {
 
 	const newValueButton = dataGenreName.map(button => {
-		console.log(genre)
 		if (button.genre === genre) {
 			return ({ ...button, value: true });
 		}
 		return ({ ...button, value: false });
 	});
 
-	const newFilterValue = [...dataRadioStantion]
-		.filter(a => a.genre === genre
-		);
-
-	setDataRadioStantion(newFilterValue);
 	setDataGenreName(newValueButton);
 };
 
+export const handleButtonsGenreFilter = ({
+	dataGenreName, setDataGenreName,
+	dataRadioStantion, setDataRadioStantion
+}) => genre => {
+
+	const newValueButton = dataGenreName.map(button => {
+		if (button.genre === genre) {
+			return ({ ...button, value: true });
+		}
+		return ({ ...button, value: false });
+	});
+
+	const newFilterValueGenre = [...dataRadioStantion]
+		.filter(a => a.genre === genre
+		);
+	setDataRadioStantion(newFilterValueGenre);
+	setDataGenreName(newValueButton);
+};
+
+
 export const handleButtonsLocation = ({
 	dataLocation, setDataLocation,
-	dataRadioStantion, setDataRadioStantion
 }) => location => {
 
 	const newValueButton = dataLocation.map(button => {
@@ -50,11 +62,6 @@ export const handleButtonsLocation = ({
 		return ({ ...button, isValue: false });
 	});
 
-	const newFilterValue = [...dataRadioStantion]
-		.filter(a => a.location === location
-		);
-
-	setDataRadioStantion(newFilterValue);
 	setDataLocation(newValueButton);
 };
 

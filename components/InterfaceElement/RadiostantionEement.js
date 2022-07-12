@@ -11,21 +11,20 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 	const [dataLocation, setDataLocation] = useState(data.locationList);
 	const [myBestState, setMyBestState] = useState([]);
 	const [isMyBest, setIsMyBest] = useState(false);
-	console.log(dataRadioStantion)
-	// useEffect(() => {
-	// 	if (isMyBest) {
-	// 		const newMyBest = [...dataRadioStantion].filter(t =>
-	// 			t.value === true
-	// 		);
-	// 		// console.log(newMyBest)
-	// 		setMyBestState(newMyBest);
-	// 	}
-	// }, [dataRadioStantion]);
 
-	// console.log(dataRadioStantion);
+	useEffect(() => {
+		if (isMyBest) {
+			const newMyBest = [...dataRadioStantion].filter(t =>
+				t.value === true
+			);
+
+			setMyBestState(prev => [...prev, ...newMyBest]);
+		}
+	}, [dataRadioStantion]);
+
 	useEffect(() => {
 		if (myBestState.length > 0) {
-			setActiveSearch(true);
+			setIsActiveMenu(true);
 		}
 	}, [myBestState]);
 
@@ -67,7 +66,7 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 		image={k.image}
 		id={k.id}
 		isValue={k.isValue}
-		/>
+	/>
 	);
 
 	return (
@@ -136,7 +135,7 @@ const ImageBtnRadiostantion = ({
 };
 
 const TextBtnGenre = ({
-	image, name,  setDataGenreName,
+	image, name, setDataGenreName,
 	dataGenreName, id, value, genre, dataRadioStantion,
 	setDataRadioStantion,
 }) => {
@@ -156,7 +155,7 @@ const TextBtnGenre = ({
 };
 
 const LocationBtn = ({
-	image, isValue, id, location, 
+	image, isValue, id, location,
 }) => {
 
 	return (

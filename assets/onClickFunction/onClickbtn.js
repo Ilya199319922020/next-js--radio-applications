@@ -1,20 +1,28 @@
 export const handleButtons = ({
-	dataRadioStantion, setDataRadioStantion, handleButtons
-}) => id => {
+	dataRadioStantion,  setDataRadioStantion, 
+}) => (id, genre, location) => {
 	const newValueButton = dataRadioStantion.map(button => {
 		if (button.id === id) {
-			return ({ ...button, value: true });
+			return (
+				{ ...button, value: true }
+			);
 		}
 		return ({ ...button, value: false });
+
 	});
-	setDataRadioStantion(newValueButton);
+	const newFilterValue = newValueButton.filter(a =>
+		a.genre === genre && a.location === location
+	);
+	setDataRadioStantion(newFilterValue);
 };
+
 
 export const handleButtonsGenre = ({
 	dataGenreName, setDataGenreName, handleButtons
-}) => id => {
+}) => genre => {
 	const newValueButton = dataGenreName.map(button => {
-		if (button.id === id) {
+		console.log(genre)
+		if (button.genre === genre) {
 			return ({ ...button, value: true });
 		}
 		return ({ ...button, value: false });
@@ -24,9 +32,9 @@ export const handleButtonsGenre = ({
 
 export const handleButtonsLocation = ({
 	dataLocation, setDataLocation, handleButtons
-}) => id => {
+}) => location => {
 	const newValueButton = dataLocation.map(button => {
-		if (button.id === id) {
+		if (button.location === location) {
 			return ({ ...button, isValue: true });
 		}
 		return ({ ...button, isValue: false });

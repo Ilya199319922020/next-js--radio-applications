@@ -29,13 +29,22 @@ module.exports = {
           height: '60px',
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
           borderRadius: '11px',
-          // border: '0.5px solid #E5E5E5',
           cursor: 'pointer',
           fontSize: '12px',
           fontWeight: '600'
         },
         '.btn-mobileRadio-active': {
           border: '6px solid #008344',
+          minWidth: '60px',
+          height: '60px',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+          borderRadius: '11px',
+          cursor: 'pointer',
+          fontSize: '12px',
+          fontWeight: '600'
+        },
+        '.btn-mobileRadioFilter-active': {
+          background: '#FCA42A',
           minWidth: '60px',
           height: '60px',
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',

@@ -39,6 +39,9 @@ export function RadiostantionEement({ data }) {
 			dataGenreName={dataGenreName}
 			setDataGenreName={setDataGenreName}
 			handleButtonsGenre={handleButtonsGenre}
+			dataRadioStantion={data.radioStations}
+			setDataRadioStantion={setDataRadioStantion}
+
 		/>
 		);
 
@@ -50,6 +53,8 @@ export function RadiostantionEement({ data }) {
 		isValue={k.isValue}
 		handleButtonsLocation={handleButtonsLocation}
 		dataLocation={dataLocation}
+		dataRadioStantion={data.radioStations}
+		setDataRadioStantion={setDataRadioStantion}
 		setDataLocation={setDataLocation}
 	/>
 	);
@@ -117,10 +122,11 @@ const ImageBtnRadiostantion = ({
 
 const TextBtnGenre = ({
 	image, name, handleButtonsGenre, setDataGenreName,
-	dataGenreName, id, value, genre
+	dataGenreName, id, value, genre, dataRadioStantion,
+	setDataRadioStantion,
 }) => {
 	const onGenreIcon = () => {
-		handleButtonsGenre({ dataGenreName, setDataGenreName })(genre)
+		handleButtonsGenre({ dataGenreName, setDataGenreName, dataRadioStantion, setDataRadioStantion })(genre)
 	};
 
 	return (
@@ -136,10 +142,10 @@ const TextBtnGenre = ({
 
 const LocationBtn = ({
 	image, isValue, id, location, handleButtonsLocation,
-	setDataLocation, dataLocation
+	setDataLocation, dataLocation, dataRadioStantion, setDataRadioStantion
 }) => {
 	const onLocationBtnn = () => {
-		handleButtonsLocation({ dataLocation, setDataLocation })(location)
+		handleButtonsLocation({ dataLocation, setDataLocation, dataRadioStantion, setDataRadioStantion })(location)
 	};
 	return (
 		<button

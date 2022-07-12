@@ -17,6 +17,7 @@ const elvis = '/icon/radiostations/elvis.png';
 const radio = '/icon/radiostations/radio.png';
 const shanson = '/icon/radiostations/shanson.png';
 
+
 export const stateInfo = {
 	radioStations: [
 		{
@@ -220,5 +221,59 @@ export const stateInfo = {
 			value: false,
 		},
 	],
-
+	genreButton: [
+		{ id: 1, genre: "Adult Pop", value: false, },
+		{ id: 2, genre: "Dance", value: false, },
+		{ id: 3, genre: "Rock", value: false, },
+		{ id: 4, genre: "Power Pop", value: false, },
+		{ id: 5, genre: "Pop", value: false, },
+		{ id: 6, genre: "Chanson", value: false, },
+		{ id: 7, genre: "Electro", value: false, },
+		{ id: 8, genre: "Hip-hop", value: false, },
+		{ id: 9, genre: "r&b soul", value: false, },
+	],
+	locationList: [
+		{
+			id: 1,
+			location: 'Testing',
+			image: null,
+			isValue: false,
+		},
+		{
+			id: 2,
+			location: 'Local',
+			image: null,
+			isValue: false,
+		},
+		{
+			id: 3,
+			location: 'Россия',
+			image: '/icon/radiostations/rus.png',
+			isValue: false,
+		},
+		{
+			id: 4,
+			location: 'United States',
+			image: '/icon/radiostations/usa.png',
+			isValue: false,
+		},
+		{
+			id: 5,
+			location: 'Belorussia',
+			image: '/icon/radiostations/Bel.png',
+			isValue: false,
+		},
+		{
+			id: 6,
+			location: 'Germany',
+			image: '/icon/radiostations/Ger.png',
+			isValue: false,
+		},
+		{
+			id: 7,
+			location: 'Latviya',
+			image: '/icon/radiostations/Lat.png',
+			isValue: false,
+		},
+	],
 };

@@ -18,6 +18,17 @@ module.exports = {
       gridTemplateColumns: {
         '6t': 'repeat(6, minmax(60px, 60px))',
       },
+      keyframes: {
+        ticker: {
+          '0%': {
+            transform: 'translate3d(100%, 0, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(-30%, 0, 0)'
+          },
+        }
+      }
+
     },
   },
   plugins: [

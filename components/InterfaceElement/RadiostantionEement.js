@@ -4,7 +4,7 @@ import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
 import ButtonText from '../AuxiliaryComponent/ButtonText';
 
-export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
+export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName }) {
 
 	const [dataRadioStantion, setDataRadioStantion] = useState(data.radioStations);
 	const [dataGenreName, setDataGenreName] = useState(data.genreButton);
@@ -17,7 +17,6 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 			const newMyBest = [...dataRadioStantion].filter(t =>
 				t.value === true
 			);
-
 			setMyBestState(prev => [...prev, ...newMyBest]);
 		}
 	}, [dataRadioStantion]);
@@ -31,6 +30,7 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 	const imageBtnList = dataRadioStantion
 		.map(i => <ImageBtnRadiostantion
 			key={i.id}
+			name={i.name}
 			image={i.image}
 			value={i.value}
 			genre={i.genre}
@@ -44,6 +44,7 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 			setDataLocation={setDataLocation}
 			setIsMyBest={setIsMyBest}
 			setMyBestState={setMyBestState}
+			setTickerRadioName={setTickerRadioName}
 		/>
 		);
 	const btnGenreList = dataGenreName
@@ -52,11 +53,11 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 			key={g.id}
 			value={g.value}
 			genre={g.genre}
-			id={g.id}
 			dataGenreName={dataGenreName}
 			setDataGenreName={setDataGenreName}
 			dataRadioStantion={data.radioStations}
 			setDataRadioStantion={setDataRadioStantion}
+			setTickerRadioName={setTickerRadioName}
 		/>
 		);
 
@@ -64,7 +65,6 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 		key={k.id}
 		location={k.location}
 		image={k.image}
-		id={k.id}
 		isValue={k.isValue}
 	/>
 	);
@@ -113,13 +113,15 @@ export function RadiostantionEement({ data, isActiveMenu, setIsActiveMenu }) {
 const ImageBtnRadiostantion = ({
 	image, name, setDataRadioStantion,
 	dataRadioStantion, id, value, genre, location, dataGenreName,
-	setDataGenreName, dataLocation, setDataLocation, setIsMyBest, setMyBestState
+	setDataGenreName, dataLocation, setDataLocation, setIsMyBest,
+	setMyBestState, setTickerRadioName
 }) => {
 	const onRadiostantionIcon = () => {
 		handleButtons({ dataRadioStantion, setDataRadioStantion, setMyBestState })(id, genre, location);
 		handleButtonsGenreActive({ dataGenreName, setDataGenreName })(genre);
 		handleButtonsLocation({ dataLocation, setDataLocation })(location);
 		setIsMyBest(true);
+		setTickerRadioName(name);
 	};
 
 	return (
@@ -136,11 +138,12 @@ const ImageBtnRadiostantion = ({
 
 const TextBtnGenre = ({
 	image, name, setDataGenreName,
-	dataGenreName, id, value, genre, dataRadioStantion,
-	setDataRadioStantion,
+	dataGenreName, value, genre, dataRadioStantion,
+	setDataRadioStantion, setTickerRadioName
 }) => {
 	const onGenreIcon = () => {
-		handleButtonsGenreFilter({ dataGenreName, setDataGenreName, dataRadioStantion, setDataRadioStantion })(genre)
+		handleButtonsGenreFilter({ dataGenreName, setDataGenreName, dataRadioStantion, setDataRadioStantion })(genre);
+		setTickerRadioName(null);
 	};
 
 	return (
@@ -155,7 +158,7 @@ const TextBtnGenre = ({
 };
 
 const LocationBtn = ({
-	image, isValue, id, location,
+	image, isValue, location,
 }) => {
 
 	return (

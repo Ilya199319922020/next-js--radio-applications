@@ -9,17 +9,19 @@ import styles from '../styles/Home.module.css';
 
 export default function Home({ data }) {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
+  const [tickerRadioName, setTickerRadioName] = useState(null);
 
   return (
     <MainLayout>
       <HeaderMobile />
-      <InterfaceElements 
+      <InterfaceElements
         isActiveMenu={isActiveMenu}
+        tickerRadioName={tickerRadioName}
       />
       <RadiostantionEement
         data={data}
-        isActiveMenu={isActiveMenu}
         setIsActiveMenu={setIsActiveMenu}
+        setTickerRadioName={setTickerRadioName}
       />
       <FooterInterface />
     </MainLayout>

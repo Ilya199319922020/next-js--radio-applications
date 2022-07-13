@@ -45,5 +45,9 @@
 }
 
 .interface__element {
-	@apply absolute w-[100%] left-[0px] top-[20%] h-[14px] bg-[#EEEEEE];
+	@apply absolute overflow-hidden w-[100%] left-[0px] top-[20%] h-[14px] bg-[#EEEEEE];
+
+	.interface__element_text {
+		@apply flex items-center text-center font-medium text-[8px] text-[#333333] animate-[ticker_5s_linear_infinite];
+	}
 }

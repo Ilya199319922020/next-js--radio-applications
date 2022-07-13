@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from '../../styles/InterfaceElements.module.scss';
 import Button from "../AuxiliaryComponent/Button";
 
-export function InterfaceElements({ isActiveMenu }) {
+export function InterfaceElements({ isActiveMenu, tickerRadioName }) {
 	const [searchValue, setSearchValue] = useState('');
 	const [activeSearch, setActiveSearch] = useState(false);
 
@@ -88,6 +88,12 @@ export function InterfaceElements({ isActiveMenu }) {
 			<div
 				className={styles.interface__element}
 			>
+				{
+					tickerRadioName && 
+						<span className={styles.interface__element_text}>
+							«Вы слушаете {tickerRadioName}»
+						</span>
+				}
 			</div>
 		</div>
 	);

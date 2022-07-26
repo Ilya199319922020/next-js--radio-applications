@@ -32,7 +32,7 @@ export const handleButtonsGenreActive = ({
 };
 
 export const handleButtonsGenreFilter = ({
-	dataGenreName, setDataGenreName,
+	dataGenreName, setDataGenreName, myBestState,
 	dataRadioStantion, setDataRadioStantion
 }) => genre => {
 

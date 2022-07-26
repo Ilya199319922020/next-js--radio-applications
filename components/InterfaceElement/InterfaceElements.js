@@ -89,10 +89,10 @@ export function InterfaceElements({ isActiveMenu, tickerRadioName }) {
 				className={styles.interface__element}
 			>
 				{
-					tickerRadioName && 
-						<span className={styles.interface__element_text}>
-							«Вы слушаете {tickerRadioName}»
-						</span>
+					tickerRadioName &&
+					<span className={styles.interface__element_text}>
+						«Вы слушаете {tickerRadioName}»
+					</span>
 				}
 			</div>
 		</div>

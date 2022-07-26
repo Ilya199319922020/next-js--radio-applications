@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { handleButtons, handleButtonsGenre, handleButtonsLocation, handleButtonsGenreActive, handleButtonsGenreFilter } from '../../assets/onClickFunction/onClickbtn';
+import { reducer } from '../../reducer/reducer';
 import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
 import ButtonText from '../AuxiliaryComponent/ButtonText';
 
 export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName }) {
-
+	// const [state, dispatch] = useReducer(reducer, [data.radioStations])
 	const [dataRadioStantion, setDataRadioStantion] = useState(data.radioStations);
 	const [dataGenreName, setDataGenreName] = useState(data.genreButton);
 	const [dataLocation, setDataLocation] = useState(data.locationList);
@@ -17,12 +18,21 @@ export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName 
 			const newMyBest = [...dataRadioStantion].filter(t =>
 				t.value === true
 			);
-			setMyBestState(prev => [...prev, ...newMyBest]);
+			const currentObject = Object.assign({}, ...newMyBest);
+
+			if (myBestState.length) {
+				const presenceMyBest = myBestState
+					.some(o => o.id === currentObject.id)
+				setMyBestState(presenceMyBest ? myBestState : [...myBestState, ...newMyBest]);
+			} else {
+				setMyBestState(newMyBest);
+			}
 		}
 	}, [dataRadioStantion]);
 
+	console.log(myBestState)
 	useEffect(() => {
-		if (myBestState.length > 0) {
+		if (myBestState.length) {
 			setIsActiveMenu(true);
 		}
 	}, [myBestState]);
@@ -53,6 +63,7 @@ export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName 
 			key={g.id}
 			value={g.value}
 			genre={g.genre}
+			myBestState={myBestState}
 			dataGenreName={dataGenreName}
 			setDataGenreName={setDataGenreName}
 			dataRadioStantion={data.radioStations}
@@ -107,9 +118,6 @@ export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName 
 	);
 };
 
-
-
-
 const ImageBtnRadiostantion = ({
 	image, name, setDataRadioStantion,
 	dataRadioStantion, id, value, genre, location, dataGenreName,
@@ -139,10 +147,13 @@ const ImageBtnRadiostantion = ({
 const TextBtnGenre = ({
 	image, name, setDataGenreName,
 	dataGenreName, value, genre, dataRadioStantion,
-	setDataRadioStantion, setTickerRadioName
+	setDataRadioStantion, setTickerRadioName, myBestState
 }) => {
 	const onGenreIcon = () => {
-		handleButtonsGenreFilter({ dataGenreName, setDataGenreName, dataRadioStantion, setDataRadioStantion })(genre);
+		handleButtonsGenreFilter({
+			dataGenreName, setDataGenreName, myBestState,
+			dataRadioStantion, setDataRadioStantion
+		})(genre);
 		setTickerRadioName(null);
 	};
 

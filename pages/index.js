@@ -17,6 +17,7 @@ export default function Home({ data }) {
       <InterfaceElements
         isActiveMenu={isActiveMenu}
         tickerRadioName={tickerRadioName}
+        data={data}
       />
       <RadiostantionEement
         data={data}

@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from '../../styles/InterfaceElements.module.scss';
 import Button from "../AuxiliaryComponent/Button";
 
-export function InterfaceElements({ isActiveMenu, tickerRadioName }) {
-	const [searchValue, setSearchValue] = useState('');
+export function InterfaceElements({ isActiveMenu, tickerRadioName, data }) {
 	const [activeSearch, setActiveSearch] = useState(false);
+	const [valueNewOnChange, setNewValueOnChange] = useState('');
+	const [currentSearchValue, setCurrentSearchValue] = useState(null);
 
 	const onSetActiveSearch = (e) => {
 		e.preventDefault();
 		setActiveSearch(prev => !prev);
+
+
+	};
+	const onValueChange = (e) => {
+		setNewValueOnChange(e.target.value)
+		const valueSearch = data.radioStations
+			.filter((element) => {
+				if (valueNewOnChange !== '') {
+					return element?.name?.toLowerCase()?.includes(valueNewOnChange?.toLowerCase())
+				}
+			})
+			setCurrentSearchValue(valueSearch)
 	};
 
+	
 	return (
 		<div>
 			<form className={styles.form}>
@@ -70,10 +84,10 @@ export function InterfaceElements({ isActiveMenu, tickerRadioName }) {
 						:
 						<form className={styles.interfaceMenu__form}>
 							<input
+								onChange={onValueChange}
 								className={styles.interfaceMenu__form_input}
-								value={searchValue}
+								value={valueNewOnChange}
 								type={'input'}
-								onChange={e => setSearchValue(e.target.value)}
 							/>
 						</form>
 				}

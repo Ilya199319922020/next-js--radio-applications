@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Button = ({
-	children, onClick, disabled, active, classNameElement, image
+	children, onClick, disabled, 
+	active, classNameElement, image,
+	isActiveButton
 }) => {
 	return (
 		<button

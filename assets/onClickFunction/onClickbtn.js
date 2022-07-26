@@ -43,9 +43,15 @@ export const handleButtonsGenreFilter = ({
 		return ({ ...button, value: false });
 	});
 
-	const newFilterValueGenre = [...dataRadioStantion]
-		.filter(a => a.genre === genre
-		);
+	const newFilterValueGenre = myBestState.length
+		?
+		[...myBestState]
+			.filter(a => a.genre === genre
+			)
+		:
+		[...dataRadioStantion]
+			.filter(a => a.genre === genre
+			);
 	setDataRadioStantion(newFilterValueGenre);
 	setDataGenreName(newValueButton);
 };

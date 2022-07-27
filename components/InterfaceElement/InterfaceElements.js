@@ -12,6 +12,7 @@ export function InterfaceElements({
 	const onSetActiveSearch = (e) => {
 		e.preventDefault();
 		setActiveSearch(prev => !prev);
+		setCurrentSearchValue(null);
 	};
 	const onValueChange = (e) => {
 		setNewValueOnChange(e.target.value)

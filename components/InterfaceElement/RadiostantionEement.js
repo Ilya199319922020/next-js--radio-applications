@@ -41,9 +41,12 @@ export function RadiostantionEement({
 			setIsActiveMenu(true);
 		}
 
-		if (currentSearchValue) {
+		currentSearchValue
+			?
 			setDataRadioStantion(currentSearchValue)
-		}
+			:
+			setDataRadioStantion(data.radioStations)
+
 	}, [myBestState, currentSearchValue]);
 
 	const imageBtnList = dataRadioStantion

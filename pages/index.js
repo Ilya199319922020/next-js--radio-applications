@@ -10,7 +10,8 @@ import styles from '../styles/Home.module.css';
 export default function Home({ data }) {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [tickerRadioName, setTickerRadioName] = useState(null);
-
+  const [currentSearchValue, setCurrentSearchValue] = useState(null);
+  
   return (
     <MainLayout>
       <HeaderMobile />
@@ -18,11 +19,13 @@ export default function Home({ data }) {
         isActiveMenu={isActiveMenu}
         tickerRadioName={tickerRadioName}
         data={data}
+        setCurrentSearchValue={setCurrentSearchValue}
       />
       <RadiostantionEement
         data={data}
         setIsActiveMenu={setIsActiveMenu}
         setTickerRadioName={setTickerRadioName}
+        currentSearchValue={currentSearchValue}
       />
       <FooterInterface />
     </MainLayout>

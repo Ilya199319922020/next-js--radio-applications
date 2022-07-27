@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import styles from '../../styles/InterfaceElements.module.scss';
 import Button from "../AuxiliaryComponent/Button";
 
-export function InterfaceElements({ isActiveMenu, tickerRadioName, data }) {
+export function InterfaceElements({
+	isActiveMenu, tickerRadioName,
+	data, setCurrentSearchValue
+}) {
 	const [activeSearch, setActiveSearch] = useState(false);
 	const [valueNewOnChange, setNewValueOnChange] = useState('');
-	const [currentSearchValue, setCurrentSearchValue] = useState(null);
 
 	const onSetActiveSearch = (e) => {
 		e.preventDefault();
 		setActiveSearch(prev => !prev);
-
-
 	};
 	const onValueChange = (e) => {
 		setNewValueOnChange(e.target.value)
@@ -21,10 +21,10 @@ export function InterfaceElements({ isActiveMenu, tickerRadioName, data }) {
 					return element?.name?.toLowerCase()?.includes(valueNewOnChange?.toLowerCase())
 				}
 			})
-			setCurrentSearchValue(valueSearch)
+		setCurrentSearchValue(valueSearch)
 	};
 
-	
+
 	return (
 		<div>
 			<form className={styles.form}>

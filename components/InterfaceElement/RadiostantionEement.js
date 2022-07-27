@@ -5,7 +5,10 @@ import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
 import ButtonText from '../AuxiliaryComponent/ButtonText';
 
-export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName }) {
+export function RadiostantionEement({
+	data, setIsActiveMenu,
+	setTickerRadioName, currentSearchValue
+}) {
 	// const [state, dispatch] = useReducer(reducer, [data.radioStations])
 	const [dataRadioStantion, setDataRadioStantion] = useState(data.radioStations);
 	const [dataGenreName, setDataGenreName] = useState(data.genreButton);
@@ -13,7 +16,7 @@ export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName 
 	const [myBestState, setMyBestState] = useState([]);
 	const [isMyBest, setIsMyBest] = useState(false);
 	const [isActiveButton, setIsActiveButton] = useState(false)
-	
+
 	useEffect(() => {
 		if (isMyBest) {
 			const newMyBest = [...dataRadioStantion]
@@ -37,7 +40,11 @@ export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName 
 		if (myBestState.length) {
 			setIsActiveMenu(true);
 		}
-	}, [myBestState]);
+
+		if (currentSearchValue) {
+			setDataRadioStantion(currentSearchValue)
+		}
+	}, [myBestState, currentSearchValue]);
 
 	const imageBtnList = dataRadioStantion
 		.map(i => <ImageBtnRadiostantion
@@ -116,7 +123,9 @@ export function RadiostantionEement({ data, setIsActiveMenu, setTickerRadioName 
 					<div
 						className={styles.wraperRadiostantion__container_elementCenter}
 					>
-						{imageBtnList}
+						{
+							imageBtnList
+						}
 					</div>
 				</div>
 			</div>

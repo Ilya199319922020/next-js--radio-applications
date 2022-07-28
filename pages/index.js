@@ -10,7 +10,7 @@ import styles from '../styles/Home.module.css';
 export default function Home({ data }) {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [tickerRadioName, setTickerRadioName] = useState(null);
-  const [currentSearchValue, setCurrentSearchValue] = useState(null);
+  const [currentSearchValue, setCurrentSearchValue] = useState([]);
   
   return (
     <MainLayout>

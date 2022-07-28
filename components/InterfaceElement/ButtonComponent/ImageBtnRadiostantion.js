@@ -1,27 +1,31 @@
+import { handleButtons, handleButtonsGenreActive, handleButtonsLocation } from "../../../assets/onClickFunction/onClickbtn";
 import Button from "../../AuxiliaryComponent/Button";
 
 export const ImageBtnRadiostantion = ({
-	image, name, setDataRadioStantion,
-	dataRadioStantion, id, value, genre, location, dataGenreName,
+	item, setDataRadioStantion, dataRadioStantion, dataGenreName,
 	setDataGenreName, dataLocation, setDataLocation, setIsMyBest,
-	setMyBestState, setTickerRadioName
+	setMyBestState, setTickerRadioName, isActiveButton, setIsActiveButton,
+	
 }) => {
-	const onRadiostantionIcon = () => {
-		handleButtons({ dataRadioStantion, setDataRadioStantion, setMyBestState })(id, genre, location);
-		handleButtonsGenreActive({ dataGenreName, setDataGenreName })(genre);
-		handleButtonsLocation({ dataLocation, setDataLocation })(location);
+	const onRadiostantionIcon = (e) => {
+		e.preventDefault();
+		handleButtons({ dataRadioStantion, setDataRadioStantion, setMyBestState })(item.id, item.genre, item.location);
+		handleButtonsGenreActive({ dataGenreName, setDataGenreName })(item.genre);
+		handleButtonsLocation({ dataLocation, setDataLocation })(item.location);
+		setIsActiveButton(false)
 		setIsMyBest(true);
-		setTickerRadioName(name);
+		setTickerRadioName(item.name);
 	};
 
 	return (
 		<Button
-			image={image}
-			classNameElement={value ? 'btn-mobileRadio-active' : 'btn-mobileRadio'}
+			image={item.image}
+			classNameElement={item.value ? 'btn-mobileRadio-active' : 'btn-mobileRadio'}
 			onClick={onRadiostantionIcon}
-			active={value ? true : false}
+			isActiveButton={isActiveButton}
+			active={item.value && !isActiveButton ? true : false}
 		>
-			{name}
+			{item.name}
 		</Button>
 	);
 };

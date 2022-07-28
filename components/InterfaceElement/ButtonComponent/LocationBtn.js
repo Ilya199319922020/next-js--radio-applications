@@ -1,19 +1,17 @@
-export const LocationBtn = ({
-	image, isValue, location,
-}) => {
+export const LocationBtn = ({ item, isValue }) => {
 
 	return (
 		<button
-			className={isValue ? 'btn-mobileRadioFilter-active' : !image && 'btn-mobileRadio'}
+			className={isValue ? 'btn-mobileRadioFilter-active' : !item.image && 'btn-mobileRadio'}
 		>
 			{
-				image
+				item.image
 					? <img
-						src={image}
+						src={item.image}
 						width={'60px'}
 						height={'60px'}
 					/>
-					: location
+					: item.location
 			}
 		</button>
 	);

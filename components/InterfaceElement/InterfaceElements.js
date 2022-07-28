@@ -14,6 +14,7 @@ export function InterfaceElements({
 		setActiveSearch(prev => !prev);
 		setCurrentSearchValue(null);
 	};
+
 	const onValueChange = (e) => {
 		setNewValueOnChange(e.target.value)
 		const valueSearch = data.radioStations
@@ -24,7 +25,6 @@ export function InterfaceElements({
 			})
 		setCurrentSearchValue(valueSearch)
 	};
-
 
 	return (
 		<div>

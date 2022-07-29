@@ -27,6 +27,7 @@ export const stateInfo = {
 			genre: "Adult Pop",
 			image: road,
 			value: false,
+			ringtony: '/ringtony/1w.mp3'
 		},
 		{
 			id: 2,
@@ -35,6 +36,7 @@ export const stateInfo = {
 			genre: "Dance",
 			image: record,
 			value: false,
+			ringtony: '/ringtony/2w.mp3'
 		},
 		{
 			id: 3,
@@ -43,6 +45,7 @@ export const stateInfo = {
 			genre: "Rock",
 			image: pilot,
 			value: false,
+			ringtony: '/ringtony/3w.mp3'
 		},
 		{
 			id: 4,
@@ -51,6 +54,7 @@ export const stateInfo = {
 			genre: "Power Pop",
 			image: europaplus,
 			value: false,
+			ringtony: '/ringtony/4w.mp3'
 		},
 		{
 			id: 5,
@@ -59,6 +63,7 @@ export const stateInfo = {
 			genre: "Rock",
 			image: elvis,
 			value: false,
+			ringtony: '/ringtony/5w.mp3'
 		},
 		{
 			id: 6,
@@ -67,6 +72,7 @@ export const stateInfo = {
 			genre: "Power Pop",
 			image: record,
 			value: false,
+			ringtony: '/ringtony/6w.mp3'
 		},
 		{
 			id: 7,
@@ -75,6 +81,7 @@ export const stateInfo = {
 			genre: "Pop",
 			image: maxmum,
 			value: false,
+			ringtony: '/ringtony/7w.mp3'
 		},
 		{
 			id: 8,
@@ -83,6 +90,7 @@ export const stateInfo = {
 			genre: "Power Pop",
 			image: europaplus,
 			value: false,
+			ringtony: '/ringtony/8w.mp3'
 		},
 		{
 			id: 9,
@@ -91,6 +99,7 @@ export const stateInfo = {
 			genre: "Adult Pop",
 			image: tik_tak,
 			value: false,
+			ringtony: '/ringtony/9w.mp3'
 		},
 		{
 			id: 10,
@@ -99,6 +108,7 @@ export const stateInfo = {
 			genre: "Power Pop",
 			image: record,
 			value: false,
+			ringtony: '/ringtony/10w.mp3'
 		},
 		{
 			id: 11,
@@ -107,6 +117,7 @@ export const stateInfo = {
 			genre: "Pop",
 			image: maxmum,
 			value: false,
+			ringtony: '/ringtony/11w.mp3'
 		},
 		{
 			id: 12,
@@ -115,6 +126,7 @@ export const stateInfo = {
 			genre: "Power Pop",
 			image: elisium,
 			value: false,
+			ringtony: '/ringtony/12w.mp3'
 		},
 		{
 			id: 13,
@@ -123,6 +135,7 @@ export const stateInfo = {
 			genre: "Adult Pop",
 			image: velena,
 			value: false,
+			ringtony: '/ringtony/13w.mp3'
 		},
 		{
 			id: 14,
@@ -131,6 +144,7 @@ export const stateInfo = {
 			genre: "Rock",
 			image: maxmum,
 			value: false,
+			ringtony: '/ringtony/14w.mp3'
 		},
 		{
 			id: 15,
@@ -139,6 +153,7 @@ export const stateInfo = {
 			genre: "Chanson",
 			image: shanson,
 			value: false,
+			ringtony: '/ringtony/15w.mp3'
 		},
 		{
 			id: 16,
@@ -147,6 +162,7 @@ export const stateInfo = {
 			genre: "Electro",
 			image: YOFM,
 			value: false,
+			ringtony: '/ringtony/16w.mp3'
 		},
 		{
 			id: 17,
@@ -155,6 +171,7 @@ export const stateInfo = {
 			genre: "Rock",
 			image: pilot,
 			value: false,
+			ringtony: '/ringtony/17w.mp3'
 		},
 		{
 			id: 18,
@@ -163,6 +180,7 @@ export const stateInfo = {
 			genre: "Hip-hop",
 			image: ritmo,
 			value: false,
+			ringtony: '/ringtony/18w.mp3'
 		},
 		{
 			id: 19,
@@ -171,6 +189,7 @@ export const stateInfo = {
 			genre: "Chanson",
 			image: ELEGANT,
 			value: false,
+			ringtony: '/ringtony/19w.mp3'
 		},
 		{
 			id: 20,
@@ -179,6 +198,7 @@ export const stateInfo = {
 			genre: "Electro",
 			image: ritmoEl,
 			value: false,
+			ringtony: '/ringtony/1w.mp3'
 		},
 		{
 			id: 21,
@@ -187,6 +207,7 @@ export const stateInfo = {
 			genre: "Power Pop",
 			image: europaplus,
 			value: false,
+			ringtony: '/ringtony/2w.mp3'
 		},
 		{
 			id: 22,
@@ -195,6 +216,7 @@ export const stateInfo = {
 			genre: "r&b soul",
 			image: pixel,
 			value: false,
+			ringtony: '/ringtony/3w.mp3'
 		},
 		{
 			id: 23,
@@ -203,6 +225,7 @@ export const stateInfo = {
 			genre: "Pop",
 			image: love,
 			value: false,
+			ringtony: '/ringtony/4w.mp3'
 		},
 		{
 			id: 24,
@@ -211,6 +234,7 @@ export const stateInfo = {
 			genre: "Adult Pop",
 			image: radio,
 			value: false,
+			ringtony: '/ringtony/5w.mp3'
 		},
 		{
 			id: 25,
@@ -219,6 +243,232 @@ export const stateInfo = {
 			genre: "Dance",
 			image: dance,
 			value: false,
+			ringtony: '/ringtony/6w.mp3'
+		},
+		{
+			id: 26,
+			name: 'Дорох',
+			location: 'Germany',
+			genre: "Dance",
+			image: road,
+			value: false,
+			ringtony: '/ringtony/7w.mp3'
+		},
+		{
+			id: 27,
+			name: 'РеFm',
+			location: 'Belorussia',
+			genre: "Pop",
+			image: record,
+			value: false,
+			ringtony: '/ringtony/8w.mp3'
+		},
+		{
+			id: 28,
+			name: 'Ел-пил',
+			location: 'Belorussia',
+			genre: "Rock",
+			image: pilot,
+			value: false,
+			ringtony: '/ringtony/9w.mp3'
+		},
+		{
+			id: 29,
+			name: 'Европа Плюс Азия',
+			location: 'Россия',
+			genre: "Pop",
+			image: europaplus,
+			value: false,
+			ringtony: '/ringtony/10w.mp3'
+		},
+		{
+			id: 30,
+			name: 'Элвис и Бурундуки',
+			location: 'United States',
+			genre: "Rock",
+			image: elvis,
+			value: false,
+			ringtony: '/ringtony/11w.mp3'
+		},
+		{
+			id: 31,
+			name: 'Рекордсмен',
+			location: 'Россия',
+			genre: "Adult Pop",
+			image: record,
+			value: false,
+			ringtony: '/ringtony/12w.mp3'
+		},
+		{
+			id: 32,
+			name: 'МаксимумУС',
+			location: 'Россия',
+			genre: "Pop",
+			image: maxmum,
+			value: false,
+			ringtony: '/ringtony/13w.mp3'
+		},
+		{
+			id: 33,
+			name: 'Евр-опа-опа-опа',
+			location: 'Россия',
+			genre: "Power Pop",
+			image: europaplus,
+			value: false,
+			ringtony: '/ringtony/14w.mp3'
+		},
+		{
+			id: 34,
+			name: 'Тик',
+			location: 'Belorussia',
+			genre: "Chanson",
+			image: tik_tak,
+			value: false,
+			ringtony: '/ringtony/15w.mp3'
+		},
+		{
+			id: 35,
+			name: 'Вперёд',
+			location: 'United States',
+			genre: "Power Pop",
+			image: record,
+			value: false,
+			ringtony: '/ringtony/16w.mp3'
+		},
+		{
+			id: 36,
+			name: 'Туда-сюда',
+			location: 'Россия',
+			genre: "Pop",
+			image: maxmum,
+			value: false,
+			ringtony: '/ringtony/17w.mp3'
+		},
+		{
+			id: 37,
+			name: 'Элис',
+			location: 'United States',
+			genre: "Power Pop",
+			image: elisium,
+			value: false,
+			ringtony: '/ringtony/18w.mp3'
+		},
+		{
+			id: 38,
+			name: 'Вена',
+			location: 'Latvija',
+			genre: "Rock",
+			image: velena,
+			value: false,
+			ringtony: '/ringtony/19w.mp3'
+		},
+		{
+			id: 39,
+			name: 'МаксимумУС',
+			location: 'Latvija',
+			genre: "Rock",
+			image: maxmum,
+			value: false,
+			ringtony: '/ringtony/1w.mp3'
+		},
+		{
+			id: 40,
+			name: 'Малец',
+			location: 'Россия',
+			genre: "Chanson",
+			image: shanson,
+			value: false,
+			ringtony: '/ringtony/2w.mp3'
+		},
+		{
+			id: 41,
+			name: 'Yo.fm',
+			location: 'United States',
+			genre: "Chanson",
+			image: YOFM,
+			value: false,
+			ringtony: '/ringtony/4w.mp3'
+		},
+		{
+			id: 42,
+			name: 'Ветерок',
+			location: 'Belorussia',
+			genre: "Rock",
+			image: pilot,
+			value: false,
+			ringtony: '/ringtony/5w.mp3'
+		},
+		{
+			id: 43,
+			name: 'Ich bin',
+			location: 'Germany',
+			genre: "Hip-hop",
+			image: ritmo,
+			value: false,
+			ringtony: '/ringtony/6w.mp3'
+		},
+		{
+			id: 44,
+			name: 'Этап',
+			location: 'Latviya',
+			genre: "Chanson",
+			image: ELEGANT,
+			value: false,
+			ringtony: '/ringtony/7w.mp3'
+		},
+		{
+			id: 45,
+			name: 'Ritm',
+			location: 'Germany',
+			genre: "Electro",
+			image: ritmoEl,
+			value: false,
+			ringtony: '/ringtony/8w.mp3'
+		},
+		{
+			id: 46,
+			name: 'Европа Плюс',
+			location: 'Россия',
+			genre: "Power Pop",
+			image: europaplus,
+			value: false,
+			ringtony: '/ringtony/9w.mp3'
+		},
+		{
+			id: 47,
+			name: 'Pi',
+			location: 'USA',
+			genre: "r&b soul",
+			image: pixel,
+			value: false,
+			ringtony: '/ringtony/10w.mp3'
+		},
+		{
+			id: 48,
+			name: 'john',
+			location: 'USA',
+			genre: "Pop",
+			image: love,
+			value: false,
+			ringtony: '/ringtony/11w.mp3'
+		},
+		{
+			id: 49,
+			name: 'Rad',
+			location: 'Germany',
+			genre: "Adult Pop",
+			image: radio,
+			value: false,
+			ringtony: '/ringtony/12w.mp3'
+		},
+		{
+			id: 50,
+			name: 'DFM',
+			location: 'United States',
+			genre: "Dance",
+			image: dance,
+			value: false,
+			ringtony: '/ringtony/13w.mp3'
 		},
 	],
 	genreButton: [

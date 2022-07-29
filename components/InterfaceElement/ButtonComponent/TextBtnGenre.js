@@ -1,3 +1,4 @@
+import { useAudio } from "../../../assets/hooks/useAudio";
 import { handleButtonsGenreFilter } from "../../../assets/onClickFunction/onClickbtn";
 import ButtonText from "../../AuxiliaryComponent/ButtonText";
 
@@ -7,6 +8,7 @@ export const TextBtnGenre = ({
 	setDataRadioStantion, setTickerRadioName, myBestState,
 	setIsActiveButton
 }) => {
+	
 	const onGenreIcon = (e) => {
 		e.preventDefault();
 		handleButtonsGenreFilter({

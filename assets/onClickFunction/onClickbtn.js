@@ -11,7 +11,7 @@ export const handleButtons = ({
 
 	});
 	const newFilterValue = [...newValueButton].filter(a =>
-		a.genre === genre && a.location === location
+		a.genre === genre && a.location === location && a.id === id
 	);
 	setDataRadioStantion(newFilterValue);
 };

@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import { handleButtons, handleButtonsGenre, handleButtonsLocation, handleButtonsGenreActive, handleButtonsGenreFilter } from '../../assets/onClickFunction/onClickbtn';
 import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
-import ButtonText from '../AuxiliaryComponent/ButtonText';
 import { ImageBtnRadiostantion } from './ButtonComponent/ImageBtnRadiostantion';
 import { LocationBtn } from './ButtonComponent/LocationBtn';
 import { TextBtnGenre } from './ButtonComponent/TextBtnGenre';
@@ -16,7 +14,7 @@ export function RadiostantionEement({
 	const [dataLocation, setDataLocation] = useState(data.locationList);
 	const [myBestState, setMyBestState] = useState([]);
 	const [isMyBest, setIsMyBest] = useState(false);
-	const [isActiveButton, setIsActiveButton] = useState(false)
+	const [isActiveButton, setIsActiveButton] = useState(false);
 
 	useEffect(() => {
 		if (isMyBest) {

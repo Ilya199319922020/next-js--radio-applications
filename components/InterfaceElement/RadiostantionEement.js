@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useMyBest } from '../../assets/hooks/useMyBest';
 import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
 import { ImageBtnRadiostantion } from './ButtonComponent/ImageBtnRadiostantion';
@@ -15,6 +16,15 @@ export function RadiostantionEement({
 	const [myBestState, setMyBestState] = useState([]);
 	const [isMyBest, setIsMyBest] = useState(false);
 	const [isActiveButton, setIsActiveButton] = useState(false);
+
+	const [activeMyBest, toggleMyBest] = useMyBest();
+
+	useEffect(() => {
+		if (activeMyBest && myBestState) {
+			setDataRadioStantion(myBestState);
+			setTickerRadioName('')
+		}
+	}, [activeMyBest]);
 
 	useEffect(() => {
 		if (isMyBest) {
@@ -49,11 +59,12 @@ export function RadiostantionEement({
 
 	useEffect(() => {
 		if (!isActiveButton) {
-			setDataRadioStantion(data.radioStations)
-			setDataGenreName(data.genreButton)
-			setDataLocation(data.locationList)
+			setDataRadioStantion(data.radioStations);
+			setDataGenreName(data.genreButton);
+			setDataLocation(data.locationList);
+			setTickerRadioName('');
 		}
-	}, [isActiveButton])
+	}, [isActiveButton]);
 
 	const imageBtnList = dataRadioStantion
 		.map(i => <ImageBtnRadiostantion
@@ -103,6 +114,7 @@ export function RadiostantionEement({
 						className={styles.wraperRadiostantion__container_element}
 					>
 						<Button
+							onClick={toggleMyBest}
 							classNameElement={styles.wraperRadiostantion__container_elementBtn}
 						>
 							My Best

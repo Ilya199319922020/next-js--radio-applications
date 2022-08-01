@@ -17,7 +17,7 @@ export function InterfaceElements({
 
 	const onValueChange = (e) => {
 		setNewValueOnChange(e.target.value)
-		const valueSearch = data.radioStations
+		const valueSearch = [...data.radioStations]
 			.filter((element) => {
 				if (valueNewOnChange !== '') {
 					return element?.name?.toLowerCase()?.includes(valueNewOnChange?.toLowerCase())

@@ -4,10 +4,10 @@ import Button from "../../AuxiliaryComponent/Button";
 
 export const ImageBtnRadiostantion = ({
 	item, setDataRadioStantion, dataRadioStantion, dataGenreName,
-	setDataGenreName, dataLocation, ringtonyState, setDataLocation,
-	setIsMyBest, setMyBestState, setTickerRadioName, isActiveButton,
-	setIsActiveButton, setRingtonyState,
+	setDataGenreName, dataLocation, setDataLocation, setIsMyBest,
+	setMyBestState, setTickerRadioName, isActiveButton, setIsActiveButton,
 }) => {
+
 	const [playing, toggle] = useAudio(item.ringtony);
 
 	const onRadiostantionIcon = (e) => {
@@ -16,7 +16,7 @@ export const ImageBtnRadiostantion = ({
 		handleButtons({ dataRadioStantion, setDataRadioStantion, setMyBestState })(item.id, item.genre, item.location);
 		handleButtonsGenreActive({ dataGenreName, setDataGenreName })(item.genre);
 		handleButtonsLocation({ dataLocation, setDataLocation })(item.location);
-		setIsActiveButton(false)
+		setIsActiveButton(!isActiveButton)
 		setIsMyBest(true);
 		setTickerRadioName(item.name);
 	};
@@ -27,7 +27,7 @@ export const ImageBtnRadiostantion = ({
 			classNameElement={item.value ? 'btn-mobileRadio-active' : 'btn-mobileRadio'}
 			onClick={onRadiostantionIcon}
 			isActiveButton={isActiveButton}
-			active={item.value && !isActiveButton ? true : false}
+			active={item.value && isActiveButton ? true : false}
 		>
 			{item.name}
 		</Button>

@@ -44,10 +44,16 @@ export function RadiostantionEement({
 	useEffect(() => {
 		if (currentSearchValue.length) {
 			setDataRadioStantion(currentSearchValue)
-		} else {
-			setDataRadioStantion(data.radioStations)
 		}
-	}, [currentSearchValue])
+	}, [currentSearchValue]);
+
+	useEffect(() => {
+		if (!isActiveButton) {
+			setDataRadioStantion(data.radioStations)
+			setDataGenreName(data.genreButton)
+			setDataLocation(data.locationList)
+		}
+	}, [isActiveButton])
 
 	const imageBtnList = dataRadioStantion
 		.map(i => <ImageBtnRadiostantion

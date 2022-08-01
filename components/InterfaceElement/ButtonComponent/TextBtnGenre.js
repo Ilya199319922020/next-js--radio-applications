@@ -1,4 +1,3 @@
-import { useAudio } from "../../../assets/hooks/useAudio";
 import { handleButtonsGenreFilter } from "../../../assets/onClickFunction/onClickbtn";
 import ButtonText from "../../AuxiliaryComponent/ButtonText";
 
@@ -16,7 +15,7 @@ export const TextBtnGenre = ({
 			dataRadioStantion, setDataRadioStantion
 		})(item.genre);
 		setTickerRadioName(null);
-		setIsActiveButton(true);
+		// setIsActiveButton(true);
 	};
 
 	return (

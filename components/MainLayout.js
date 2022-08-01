@@ -1,12 +1,19 @@
+import Head from 'next/head';
 import React from 'react';
 import styles from '../styles/MainLayout.module.scss';
 
 export function MainLayout({ children }) {
 	return (
-		<div
-			className={styles.layout}
-		>
-			{children}
-		</div>
+		<>
+			<Head>
+				<meta keywords="radio, dance, shanson, Pop"></meta>
+				<title>Radio</title>
+			</Head>
+			<div
+				className={styles.layout}
+			>
+				{children}
+			</div>
+		</>
 	);
 };

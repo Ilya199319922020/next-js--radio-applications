@@ -498,32 +498,40 @@ export const stateInfo = {
 		{
 			id: 3,
 			location: 'Россия',
-			image: '/icon/radiostations/rus.png',
+			image: '/icon/radiostations/rus3.png',
 			isValue: false,
+			image_active:'/icon/radiostations/rus_active.png',
 		},
 		{
 			id: 4,
 			location: 'United States',
 			image: '/icon/radiostations/usa.png',
 			isValue: false,
+			image_active:'/icon/radiostations/usa_active.png',
 		},
 		{
 			id: 5,
 			location: 'Belorussia',
-			image: '/icon/radiostations/Bel.png',
+			image: '/icon/radiostations/bel.png',
 			isValue: false,
+			image_active:'/icon/radiostations/bel_active.png',
+
 		},
 		{
 			id: 6,
 			location: 'Germany',
-			image: '/icon/radiostations/Ger.png',
+			image: '/icon/radiostations/ger.png',
 			isValue: false,
+			image_active:'/icon/radiostations/ger_active.png',
+
 		},
 		{
 			id: 7,
 			location: 'Latviya',
-			image: '/icon/radiostations/Lat.png',
+			image: '/icon/radiostations/lat.png',
 			isValue: false,
+			image_active:'/icon/radiostations/lat_active.png',
+
 		},
 	],
 };

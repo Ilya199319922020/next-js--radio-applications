@@ -16,7 +16,6 @@ export function RadiostantionEement({
 	const [myBestState, setMyBestState] = useState([]);
 	const [isMyBest, setIsMyBest] = useState(false);
 	const [isActiveButton, setIsActiveButton] = useState(false);
-
 	const [activeMyBest, toggleMyBest] = useMyBest();
 
 	useEffect(() => {
@@ -52,7 +51,7 @@ export function RadiostantionEement({
 	}, [myBestState]);
 
 	useEffect(() => {
-		if (currentSearchValue.length) {
+		if (currentSearchValue) {
 			setDataRadioStantion(currentSearchValue)
 		}
 	}, [currentSearchValue]);
@@ -135,7 +134,7 @@ export function RadiostantionEement({
 						}
 					</div>
 					<div
-						className={styles.wraperRadiostantion__container_elementCenter}
+						className={ styles.wraperRadiostantion__container_elementCenter}
 					>
 						{
 							imageBtnList

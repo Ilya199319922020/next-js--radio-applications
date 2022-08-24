@@ -6,13 +6,15 @@ export const handleButtons = ({
 			return (
 				{ ...button, value: true }
 			);
-		}
+		} 
 		return ({ ...button, value: false });
 
 	});
+	
 	const newFilterValue = [...newValueButton].filter(a =>
-		a.genre === genre && a.location === location && a.id === id
+		a.genre === genre && a.location === location
 	);
+
 	setDataRadioStantion(newFilterValue);
 };
 
@@ -54,6 +56,7 @@ export const handleButtonsGenreFilter = ({
 			);
 	setDataRadioStantion(newFilterValueGenre);
 	setDataGenreName(newValueButton);
+	console.log(newValueButton)
 };
 
 

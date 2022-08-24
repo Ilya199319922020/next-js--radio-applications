@@ -5,9 +5,8 @@ export const TextBtnGenre = ({
 	item, setDataGenreName,
 	dataGenreName, dataRadioStantion,
 	setDataRadioStantion, setTickerRadioName, myBestState,
-	setIsActiveButton
-}) => {
-	
+	}) => {
+
 	const onGenreIcon = (e) => {
 		e.preventDefault();
 		handleButtonsGenreFilter({
@@ -15,7 +14,7 @@ export const TextBtnGenre = ({
 			dataRadioStantion, setDataRadioStantion
 		})(item.genre);
 		setTickerRadioName(null);
-		// setIsActiveButton(true);
+		//setIsActiveButton(true);
 	};
 
 	return (

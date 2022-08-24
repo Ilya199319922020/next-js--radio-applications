@@ -42,7 +42,7 @@ module.exports = {
           borderRadius: '11px',
           cursor: 'pointer',
           fontSize: '12px',
-          fontWeight: '600'
+          fontWeight: '600',
         },
         '.btn-mobileRadio-active': {
           border: '6px solid #008344',
@@ -54,6 +54,29 @@ module.exports = {
           fontSize: '12px',
           fontWeight: '600'
         },
+        '.btn-mobileRadio-deactive': {
+          filter: 'brightness(0) invert(1)',
+          minWidth: '60px',
+          height: '60px',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+          borderRadius: '11px',
+          cursor: 'pointer',
+          fontSize: '12px',
+          fontWeight: '600'
+        },
+
+        '.btnImage': {
+          display: 'grid',
+          gridRowStart: '2',
+          gridTemplateColumns: 'repeat(9, minmax(0, 1fr))',
+          gridColumnStart: '2',
+          gap: '14px',
+          zIndex: '0',
+          background: '#FFE0B6',
+          borderRadius: '14px',
+          padding: '6px'
+        },
+
         '.btn-mobileRadioFilter-active': {
           background: '#FCA42A',
           minWidth: '60px',

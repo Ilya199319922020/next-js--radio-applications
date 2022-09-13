@@ -6,11 +6,10 @@ export const handleButtons = ({
 			return (
 				{ ...button, value: true }
 			);
-		} 
+		}
 		return ({ ...button, value: false });
 
 	});
-	
 	const newFilterValue = [...newValueButton].filter(a =>
 		a.genre === genre && a.location === location
 	);
@@ -21,42 +20,54 @@ export const handleButtons = ({
 
 export const handleButtonsGenreActive = ({
 	dataGenreName, setDataGenreName,
-}) => genre => {
+}) => (genre, isValue) => {
 
-	const newValueButton = dataGenreName.map(button => {
-		if (button.genre === genre) {
-			return ({ ...button, value: true });
-		}
-		return ({ ...button, value: false });
-	});
-
+	const newValueButton = dataGenreName
+		.map(button => {
+			if (button.genre === genre) {
+				return ({ ...button, value: true });
+			}
+			else if (button.value === isValue) {
+				return ({ ...button, value: false });
+			}
+			return ({ ...button, value: false });
+		});
 	setDataGenreName(newValueButton);
 };
 
 export const handleButtonsGenreFilter = ({
 	dataGenreName, setDataGenreName, myBestState,
 	dataRadioStantion, setDataRadioStantion
-}) => genre => {
+}) => (genre, isValue) => {
+	const newValueButton = dataGenreName
+		.map(button => {
+			if (button.genre === genre && isValue === false) {
+				return ({ ...button, value: true });
+			}
+			else if (button.value === isValue) {
+				return ({ ...button, value: false });
+			} else {
+				return ({ ...button, value: false });
+			}
 
-	const newValueButton = dataGenreName.map(button => {
-		if (button.genre === genre) {
-			return ({ ...button, value: true });
-		}
-		return ({ ...button, value: false });
-	});
+		});
 
-	const newFilterValueGenre = myBestState.length
-		?
-		[...myBestState]
-			.filter(a => a.genre === genre
-			)
+	const newFilterValueGenre = isValue ?
+		dataRadioStantion
 		:
-		[...dataRadioStantion]
-			.filter(a => a.genre === genre
-			);
+		myBestState.length
+			?
+			[...myBestState]
+				.filter(a => a.genre === genre
+				)
+			:
+			[...dataRadioStantion]
+				.filter(a => a.genre === genre);
+
+
 	setDataRadioStantion(newFilterValueGenre);
 	setDataGenreName(newValueButton);
-	console.log(newValueButton)
+
 };
 
 
@@ -64,12 +75,13 @@ export const handleButtonsLocation = ({
 	dataLocation, setDataLocation,
 }) => location => {
 
-	const newValueButton = dataLocation.map(button => {
-		if (button.location === location) {
-			return ({ ...button, isValue: true });
-		}
-		return ({ ...button, isValue: false });
-	});
+	const newValueButton = dataLocation
+		.map(button => {
+			if (button.location === location) {
+				return ({ ...button, isValue: true });
+			}
+			return ({ ...button, isValue: false });
+		});
 
 	setDataLocation(newValueButton);
 };

@@ -19,6 +19,7 @@ export const ImageBtnRadiostantion = ({
 		setIsActiveButton(!isActiveButton)
 		setIsMyBest(true);
 		setTickerRadioName(item.name);
+		
 	};
 
 	return (

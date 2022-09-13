@@ -17,11 +17,11 @@ export function RadiostantionEement({
 	const [isMyBest, setIsMyBest] = useState(false);
 	const [isActiveButton, setIsActiveButton] = useState(false);
 	const [activeMyBest, toggleMyBest] = useMyBest();
-
+	
 	useEffect(() => {
 		if (activeMyBest && myBestState) {
 			setDataRadioStantion(myBestState);
-			setTickerRadioName('')
+			setTickerRadioName('');
 		}
 	}, [activeMyBest]);
 
@@ -63,6 +63,8 @@ export function RadiostantionEement({
 			setDataLocation(data.locationList);
 			setTickerRadioName('');
 		}
+
+
 	}, [isActiveButton]);
 
 	const imageBtnList = dataRadioStantion
@@ -134,7 +136,7 @@ export function RadiostantionEement({
 						}
 					</div>
 					<div
-						className={ styles.wraperRadiostantion__container_elementCenter}
+						className={styles.wraperRadiostantion__container_elementCenter}
 					>
 						{
 							imageBtnList

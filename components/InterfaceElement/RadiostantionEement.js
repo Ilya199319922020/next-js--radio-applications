@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMyBest } from '../../assets/hooks/useMyBest';
 import styles from '../../styles/RadiostantionEement.module.scss';
 import Button from '../AuxiliaryComponent/Button';
@@ -6,12 +6,13 @@ import { ImageBtnRadiostantion } from './ButtonComponent/ImageBtnRadiostantion';
 import { LocationBtn } from './ButtonComponent/LocationBtn';
 import { TextBtnGenre } from './ButtonComponent/TextBtnGenre';
 
-export function RadiostantionEement({
+export const RadiostantionEement = ({
 	data, setIsActiveMenu,
 	setTickerRadioName, currentSearchValue
-}) {
-	const [dataRadioStantion, setDataRadioStantion] = useState(data.radioStations);
-	const [dataGenreName, setDataGenreName] = useState(data.genreButton);
+}) => {
+
+	const [dataRadioStantion, setDataRadioStantion] = useState(data.radioStations);  //вынести в usereducer
+	const [dataGenreName, setDataGenreName] = useState(data.genreButton);            //usecallback сделать  
 	const [dataLocation, setDataLocation] = useState(data.locationList);
 	const [myBestState, setMyBestState] = useState([]);
 	const [isMyBest, setIsMyBest] = useState(false);
@@ -45,12 +46,6 @@ export function RadiostantionEement({
 	}, [dataRadioStantion]);
 
 	useEffect(() => {
-		if (myBestState.length) {
-			setIsActiveMenu(true);
-		}
-	}, [myBestState]);
-
-	useEffect(() => {
 		if (currentSearchValue) {
 			setDataRadioStantion(currentSearchValue)
 		}
@@ -62,9 +57,10 @@ export function RadiostantionEement({
 			setDataGenreName(data.genreButton);
 			setDataLocation(data.locationList);
 			setTickerRadioName('');
+			setIsActiveMenu(false);
+		} else {
+			setIsActiveMenu(true);
 		}
-
-
 	}, [isActiveButton]);
 
 	const imageBtnList = dataRadioStantion

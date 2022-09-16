@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = ({
-	children, onClick, disabled, 
+	children, onClick, disabled,
 	active, classNameElement, image,
 	isActiveButton
 }) => {
@@ -14,7 +14,9 @@ const Button = ({
 			{
 				image ?
 					<img
-						className={!classNameElement && 'btn-mobileRadio' || active && 'btn-mobileRadio-active'}
+						className={
+							!classNameElement && 'btn-mobileRadio' || active && 'btn-mobileRadio-active'
+						}
 						src={image}
 					/>
 					: children

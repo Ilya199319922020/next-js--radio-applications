@@ -19,7 +19,6 @@ export const ImageBtnRadiostantion = ({
 		setIsActiveButton(!isActiveButton)
 		setIsMyBest(true);
 		setTickerRadioName(item.name);
-		
 	};
 
 	return (
@@ -28,7 +27,11 @@ export const ImageBtnRadiostantion = ({
 			classNameElement={item.value ? 'btn-mobileRadio-active' : 'btn-mobileRadio'}
 			onClick={onRadiostantionIcon}
 			isActiveButton={isActiveButton}
-			active={item.value && isActiveButton ? true : false}
+			active={
+				item.value && isActiveButton
+					? true
+					: false
+			}
 		>
 			{item.name}
 		</Button>

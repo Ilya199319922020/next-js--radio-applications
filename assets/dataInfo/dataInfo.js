@@ -17,7 +17,6 @@ const elvis = '/icon/radiostations/elvis.png';
 const radio = '/icon/radiostations/radio.png';
 const shanson = '/icon/radiostations/shanson.png';
 
-
 export const stateInfo = {
 	radioStations: [
 		{

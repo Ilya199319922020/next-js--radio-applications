@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const useAudio = url => {
+export const useAudio = (url) => {
 	const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
 	const [playing, setPlaying] = useState(false);
 
@@ -8,9 +8,7 @@ export const useAudio = url => {
 
 	useEffect(() => {
 		playing ? audio.play() : audio.pause();
-	},
-		[playing]
-	);
+	}, [playing]);
 
 	useEffect(() => {
 		audio.addEventListener('ended', () => setPlaying(false));

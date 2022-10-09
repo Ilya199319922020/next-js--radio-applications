@@ -7,7 +7,6 @@ export const ImageBtnRadiostantion = ({
 	setDataGenreName, dataLocation, setDataLocation, setIsMyBest,
 	setMyBestState, setTickerRadioName, isActiveButton, setIsActiveButton,
 }) => {
-
 	const [playing, toggle] = useAudio(item.ringtony);
 
 	const onRadiostantionIcon = (e) => {
@@ -27,13 +26,11 @@ export const ImageBtnRadiostantion = ({
 			classNameElement={item.value ? 'btn-mobileRadio-active' : 'btn-mobileRadio'}
 			onClick={onRadiostantionIcon}
 			isActiveButton={isActiveButton}
-			active={
-				item.value && isActiveButton
-					? true
-					: false
-			}
+			active={item.value && isActiveButton ? true : false}
 		>
-			{item.name}
+			{
+				item.name
+			}
 		</Button>
 	);
 };

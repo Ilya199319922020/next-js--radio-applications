@@ -9,13 +9,14 @@ const Button = ({
 		<button
 			disabled={disabled}
 			onClick={onClick}
-			className={!image && classNameElement}
-		>
+			className={!image && classNameElement }
+					>
 			{
 				image ?
 					<img
 						className={
-							!classNameElement && 'btn-mobileRadio' || active && 'btn-mobileRadio-active'
+							// !classNameElement && 'btn-mobileRadio' || active && 'btn-mobileRadio-active'
+							classNameElement
 						}
 						src={image}
 					/>
